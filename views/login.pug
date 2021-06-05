@@ -1,0 +1,20 @@
+extends _layout
+
+block content
+  h1.title เข้าสู่ระบบ
+  hr
+  .buttons
+    a.button(href="/login/facebook") เข้าสู่ระบบผ่าน Facebook
+  form(action="/login", method="post") 
+    .field
+      .control
+        label.label ที่อยู่อีเมล
+        input.input(type="email" name="email" required)
+    .field
+      .control
+        label.label รหัสผ่าน
+        input.input(type="password" name="password" required)
+    hr
+    .field
+      button.button.is-link ส่งข้อมูล
+    

@@ -1,0 +1,17 @@
+extends _layout
+
+block content
+  h1.title การเข้าสู่ระบบ
+  hr
+  if !user
+    .buttons
+      a.button(href="/login") เข้าสู่ระบบ
+      a.button.is-link(href="/register") สมัครสมาชิก
+  else
+    .content
+      ul
+        li #{user.email}
+    .buttons
+      if !user.oauth.facebook
+        a.button(href="/add-provider/facebook") เชื่อมต่อกับ Facebook
+      a.button(href="/logout") ออกจากระบบ
